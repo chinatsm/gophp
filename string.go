@@ -17,8 +17,7 @@ import (
 	"strings"
 	"unicode/utf8"
 
-	"./machineid"
-	"./mahonia"
+ 
 )
 
 const (
@@ -63,11 +62,7 @@ func Guid() string {
 	}
 	return Md5(base64.URLEncoding.EncodeToString(b))
 }
-func GetMachineID(appname string) (string, error) {
-	id, err := machineid.ProtectedID(appname + "v")
-
-	return id, err
-}
+ 
 func Md5(data string) string {
 	md5Ctx := md5.New()                            //md5 init
 	md5Ctx.Write([]byte(data))                     //md5 updata
